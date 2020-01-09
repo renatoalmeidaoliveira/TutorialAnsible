@@ -1,4 +1,4 @@
-  Neste repositório será demonstrado a implementação da topologia da figura XX, onde será realizada uma configuração básica, contemplando:
+  Neste repositório será demonstrado a implementação da topologia da Figura 1, onde será realizada uma configuração básica, contemplando:
 * Configuração de IPs nas interfaces
 * Configuração de OSPF em todos os roteadores, exceto os CPEs
 * Configuração de MPLS LDP em todos os roteadores, exceto os CPEs
