@@ -1,0 +1,14 @@
+mpls:
+  routerId: Loopback0
+  labelProto: ldp
+  interfaces:    
+    - interface:
+      name: Ethernet1/1
+      enabled: True
+    - interface:
+      name: Ethernet1/2
+      enabled: True
+    - interface:
+      name: Ethernet1/3
+      enabled: True
+

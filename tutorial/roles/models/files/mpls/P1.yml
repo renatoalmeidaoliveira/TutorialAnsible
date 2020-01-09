@@ -1,0 +1,11 @@
+mpls:
+  routerId: 10.0.0.1
+  labelProto: ldp
+  interfaces:    
+    - interface:
+      name: ether2
+      enabled: True
+    - interface:
+      name: ether3
+      enabled: True
+

@@ -1,0 +1,15 @@
+- name: Testes
+  hosts: P1
+  gather_facts: no
+
+  tasks:
+
+
+  - name: run command on remote devices
+    routeros_command:
+      commands: /routing ospf instance print
+    register: output
+
+  - name: RouterOS output
+    debug:
+      var: output

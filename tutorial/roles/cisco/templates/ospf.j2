@@ -1,0 +1,16 @@
+router ospf {{ ospf.process }}
+{% if ospf.routerId is defined %}
+ router-id {{ ospf.routerId }}
+{% endif %}
+{% for network in ospf.networks %}
+ network {{ network.prefix | ipaddr('address')}} {{ network.prefix | ipaddr('hostmask')}} area {{network.area}}
+{% endfor %}
+!
+{% for interface in ospf.interfaces %}
+interface {{ interface.name }}
+ ip ospf {{ ospf.process }} area {{ interface.area }}
+{% if interface.prefixSupression is defined %}
+ ip ospf prefix-suppression
+{% endif %}
+!
+{% endfor %}

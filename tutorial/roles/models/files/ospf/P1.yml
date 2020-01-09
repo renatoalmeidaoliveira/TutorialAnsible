@@ -1,0 +1,14 @@
+ospf:
+  routerId: 10.0.0.1
+  process: 1
+  networks:
+    - network:
+      prefix: 172.30.128.8/30
+      area: backbone
+    - network:
+      prefix: 172.30.128.12/30
+      area: backbone
+    - network:
+      prefix: 10.0.0.1/32
+      area: backbone
+

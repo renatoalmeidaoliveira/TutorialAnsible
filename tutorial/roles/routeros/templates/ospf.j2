@@ -1,0 +1,5 @@
+commands:
+ - routing ospf instance add name={{ ospf.instanceName | default('default') }} router-id={{ ospf.routerId}}
+{% for network in ospf.networks %}
+ - routing ospf network add network={{ network.prefix }} area={{network.area}}
+{% endfor %}

@@ -1,0 +1,35 @@
+
+- name: List {{scope}} directory
+  find:
+    paths: roles/models/files/{{scope}}
+    patterns: "*{{ inventory_hostname }}.yml"
+    recurse: yes
+    file_type: file
+  register: Files
+  delegate_to: localhost
+
+- name: Include {{scope}} vars
+  include_vars:
+    file: roles/models/files/{{scope}}/{{ inventory_hostname }}.yml
+  when: Files.files != []
+  delegate_to: localhost
+
+- name: Make Config
+  template:
+    src: "{{scope}}.j2"
+    dest: cfg/{{scope}}/{{ inventory_hostname }}.cfg
+    mode: 0777
+  when: Files.files != []
+  delegate_to: localhost
+
+- name: Include routerOs commands
+  include_vars:
+   file: cfg/{{scope}}/{{ inventory_hostname }}.cfg
+  when: Files.files != []
+  delegate_to: localhost
+
+- name: Apply Config
+  routeros_command:
+   commands:  "/{{ item }}"
+  when: Files.files != [] 
+  with_items:  "{{ commands }}"     

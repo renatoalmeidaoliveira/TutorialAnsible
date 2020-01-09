@@ -1,0 +1,9 @@
+pseudowire-class {{ xconn.class }}
+ encapsulation {{ xconn.encapsulation }}
+!
+!
+interface {{ xconn.interface }}
+ no shutdown
+ xconnect {{ xconn.peer }} {{ xconn.VC }} encapsulation {{ xconn.encapsulation }} pw-class {{ xconn.class }}
+
+!

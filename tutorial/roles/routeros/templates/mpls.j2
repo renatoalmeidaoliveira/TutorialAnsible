@@ -1,0 +1,7 @@
+commands:
+{% if mpls.labelProto == "ldp" %}
+ - mpls ldp set enabled=yes lsr-id={{ mpls.routerId }} transport-address={{ mpls.routerId }} 
+{% for interface in mpls.interfaces %}
+ - mpls ldp interface add interface={{interface.name}}
+{% endfor %}
+{% endif %}

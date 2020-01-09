@@ -1,0 +1,16 @@
+{% for interface in interfaces %}
+interface {{ interface.name }}
+{% if interface.description is defined %}
+ description {{ interface.description}}
+{% endif %}
+{% if (interface.address is defined ) and (interface.mask is defined ) %}
+ ip address {{ interface.address  }} {{ interface.mask }}
+{% endif %}
+{% if interface.enabled == True %}
+ no shutdown
+{% endif %}
+{% if interface.enabled == False %}
+ shutdown
+{% endif %}
+ exit
+{% endfor %}

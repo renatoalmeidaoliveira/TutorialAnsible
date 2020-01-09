@@ -1,0 +1,10 @@
+- name: Assert Test
+  hosts: localhost
+ 
+  tasks:
+  
+  - name: Teste de endereço
+    assert:
+      that:
+        - ' "192.168.0.3/30" | ipaddr("host/prefix") ' 
+       

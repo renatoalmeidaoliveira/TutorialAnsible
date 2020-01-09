@@ -1,0 +1,16 @@
+- name: deploy interfaces
+  import_tasks: deploy.yml
+  vars:
+    scope: interfaces
+
+- name: deploy ospf
+  import_tasks: deploy.yml
+  vars:
+    scope: ospf
+
+- name: deploy mpls
+  import_tasks: deploy.yml
+  vars:
+    scope: mpls
+
+

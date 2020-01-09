@@ -1,0 +1,9 @@
+[cisco]
+CPE1 ansible_host=192.168.127.167
+PE1 ansible_host=192.168.127.170
+P2 ansible_host=192.168.127.172
+P3 ansible_host=192.168.127.171
+PE2 ansible_host=192.168.127.169
+CPE2 ansible_host=192.168.127.168
+[routeros]
+P1 ansible_host=192.168.127.131

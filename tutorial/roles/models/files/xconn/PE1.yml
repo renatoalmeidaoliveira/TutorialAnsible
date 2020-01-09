@@ -1,0 +1,6 @@
+xconn: 
+ class: L2VPN
+ interface: Ethernet1/2
+ peer: 10.1.0.2
+ VC: 100
+ encapsulation: mpls

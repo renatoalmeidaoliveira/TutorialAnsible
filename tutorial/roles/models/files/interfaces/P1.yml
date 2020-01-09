@@ -1,0 +1,16 @@
+interfaces: 
+ - interface:
+   name: Loopback0
+   address: 10.0.0.1
+   mask: 255.255.255.255
+   enabled: True
+ - interface:
+   name: ether2
+   address: 172.30.128.10
+   mask: 255.255.255.252
+   enabled: True
+ - interface:
+   name: ether3
+   address: 172.30.128.13
+   mask: 255.255.255.252
+   enabled: True

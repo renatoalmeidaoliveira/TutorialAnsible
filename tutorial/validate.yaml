@@ -1,0 +1,8 @@
+- name: Cisco
+  hosts: cisco
+  roles:
+   - cisco
+- name: MikroTik
+  hosts: routeros
+  roles:
+   - routeros

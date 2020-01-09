@@ -1,0 +1,10 @@
+commands:
+{% for interface in interfaces %}
+{% if 'Loopback' in interface.name %}
+  - interface bridge add name={{ interface.name }}
+  - ip address add address={{ interface.address }}/{{ interface.mask }} interface={{interface.name}}
+{% else %}
+  - ip address add address={{ interface.address }}/{{ interface.mask }} interface={{interface.name}}
+{% endif %}
+
+{% endfor %}

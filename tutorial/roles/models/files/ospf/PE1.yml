@@ -1,0 +1,12 @@
+ospf:
+  routerId: 10.1.0.1
+  process: 1
+  networks:
+    - network:
+      prefix: 10.1.0.1/32
+      area: 0
+  interfaces:
+    - interface:
+      name: Ethernet1/1
+      area: 0
+      prefixSupression: True

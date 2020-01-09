@@ -1,0 +1,14 @@
+mpls ip
+mpls label protocol {{ mpls.labelProto }}
+mpls ldp router-id {{ mpls.routerId }}
+!
+{% for interface in mpls.interfaces %}
+interface {{ interface.name }}
+{% if interface.enabled == True %}
+ mpls ip
+{% endif %}
+{% if interface.enabled == False %}
+ no mpls ip
+{% endif %}
+!
+{% endfor %}
